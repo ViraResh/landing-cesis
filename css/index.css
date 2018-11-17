@@ -13,8 +13,9 @@ header {
     justify-content: center;
     position: relative;
     height: 100vh;
+    text-align: center;
     color: white;
-    background: url('../image/header.jpg');
+    min-height: 100vh;
 }
 a {
     cursor: pointer;
@@ -22,7 +23,8 @@ a {
 }
 header h1 {
     font-size: 200px;
-    font-weight: 400;
+    font-weight: 700;
+    z-index: 2;
 }
 header .header__top {
     position: absolute;
@@ -30,8 +32,12 @@ header .header__top {
     left: 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
-    padding: 0 40px;
+    z-index: 3;
+}
+header .header__top .logo {
+    margin-left: 40px;
 }
 .hamburger-input {
     display: none;
@@ -39,14 +45,37 @@ header .header__top {
 .hamburger {
     width: 24px;
     height: 16px;
+    margin-right: 40px;
+    position: relative;
+    z-index: 11;
+    cursor: pointer;
+}
+.hamburger .hamburger__row {
+   position: absolute;
+    top: 0;
+}
+.hamburger .hamburger__row:nth-child(2) {
+    top: 50%;
+}
+.hamburger .hamburger__row:nth-child(3) {
+    top: 100%;
 }
 .hamburger .hamburger__row {
     width: 100%;
     height: 4px;
     background-color: white;
 }
+.header__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 .header__subtitle {
-    margin-top: 38px;
+    font-size: 36px;
+    z-index: 2;
 }
 .header__btn {
     width: 190px;
@@ -57,7 +86,7 @@ header .header__top {
     justify-content: center;
     border-radius: 32px;
     border: 1px solid #ffffff;
-
+    z-index: 2;
     color: #ffffff;
     font-family: 'Poppins', sans-serif;
     font-size: 12px;
@@ -69,12 +98,30 @@ header .header__top {
     background-color: white;
     color: #2a2d2e;
 }
+.header__go-down {
+    position: absolute;
+    bottom: 50px;
+}
 
 
 @media (max-width: 1366px) {
-
+    header {
+        min-height: 100vh;
+        height: initial;
+    }
+    header h1 {
+        font-size: 100px;
+    }
+    .header__subtitle {
+        font-size: 32px;
+    }
 }
 
 @media (max-width: 768px) {
-
+    header h1 {
+        font-size: 54px;
+    }
+    .header__subtitle {
+        font-size: 22px;
+    }
 }
